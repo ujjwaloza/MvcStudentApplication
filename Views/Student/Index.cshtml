@@ -1,0 +1,33 @@
+﻿@model List<MvcStudentApp.Models.Student>
+
+<h2>Student List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mb-3">Add Student</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Name</td>
+                <td>@s.Course</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@s.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@s.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+﻿@model MvcStudentApp.Models.Student
+   <h2>Add new Student</h2>
+@using (Html.BeginForm())
+{
+	<label>Id:</label>
+	@Html.TextBoxFor(m => m.Id)
+	<br /><br />
+	<label>Name:</label>
+	@Html.TextBoxFor(m => m.Name)
+	<br /><br />
+	<label>
+		Course:
+	</label>
+	@Html.TextBoxFor(m => m.Course)
+	<br /><br />
+	<input type="submit" value="Add"/>
+}
+
+
