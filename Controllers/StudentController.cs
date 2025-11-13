@@ -34,9 +34,14 @@ namespace MvcStudentApp.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             var student = _context.Students.Find(id);
+
+            if (student == null)
+            {
+                return NotFound(); // ✅ Handle missing record safely
+            }
             return View(student);
         }
 
@@ -52,6 +57,10 @@ namespace MvcStudentApp.Controllers
         public ActionResult Delete(int id)
         {
             var student = _context.Students.Find(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
             return View(student);
         }
 

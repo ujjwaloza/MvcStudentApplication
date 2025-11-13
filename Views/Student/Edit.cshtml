@@ -1,0 +1,21 @@
+@model MvcStudentApp.Models.Student
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h2>Edit Student</h2>
+
+@using (Html.BeginForm())
+{
+@Html.HiddenFor(m => m.Id)
+
+<label>Name:</label>
+@Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+<br />
+
+<label>Course:</label>
+@Html.TextBoxFor(m => m.Course, new { @class = "form-control" })
+<br />
+
+<input type="submit" value="Update" class="btn btn-success" />
+}
